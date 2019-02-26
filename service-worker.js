@@ -1,5 +1,5 @@
 let name = 'mdma';
-let files = ['/index.html', '/styles.css', 'logo/256.png'];
+let files = ['/index.html', '/styles.css', 'logo/512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
