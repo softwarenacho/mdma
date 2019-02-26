@@ -181,6 +181,7 @@ h2 {
   .info .lasts {
     width: calc(100% - 0px);
     flex-direction: column;
+    margin-bottom: 50px;
   }
   .info .lasts a {
     display: block;
