@@ -5,10 +5,12 @@ $("#bio-toggle").click( () => {
   });
 });
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js').then( () => {
-  });
-}
+(() => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then( () => {
+    });
+  }
+});
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
