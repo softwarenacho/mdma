@@ -34,7 +34,7 @@ a:hover {
 
 .header .bio {
   margin: 2.5px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -72,7 +72,7 @@ video {
   z-index: 1;
   font-size: 1.25rem;
   flex-direction: column;
-  border-radius: 75px;
+  border-radius: 25px;
 }
 
 .lasts a {
