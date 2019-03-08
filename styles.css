@@ -9,6 +9,7 @@ body {
   font-family: 'Andale', Sans-Serif;
   margin: 0;
   margin-top: -16px;
+  overflow-x: hidden;
 }
 
 a:hover {
@@ -51,7 +52,8 @@ a:hover {
   position: relative;
   }
 
-video {
+#video, #img  {
+  display: none;
   position: absolute;
   width: 100vw;
   height: calc(100vh - 135px);
@@ -136,7 +138,7 @@ h2 {
   }
   .header h1 {
     font-size: 1rem;
-    width: 100%;
+    width: 100vw;
     padding: 5px;
     padding-top: 15px;
   }
@@ -147,7 +149,7 @@ h2 {
   .header .bio {
     font-size: 0.75rem;
   }
-  .content, video {
+  .content, #video, #img  {
     height: calc(100vh - 85px);
   }
   .content .modal {
