@@ -139,6 +139,7 @@ h2 {
   .header h1 {
     font-size: 1rem;
     width: 100vw;
+    max-width: calc(100vw - 40px);
     padding: 5px;
     padding-top: 15px;
   }
@@ -156,7 +157,7 @@ h2 {
     font-size: 0.85rem;
   }
   .info h1 {
-    width: calc(100% - 30px);
+    width: calc(100% - 32px);
     font-size: 0.75rem;
   }
   .info .socials {
