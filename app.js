@@ -10,4 +10,11 @@ $(() => {
       opacity: "toggle"
     });
   });
+  var clickHandler = ('ontouchstart' in document.documentElement ? 'touchstart' : 'click');
+  $('a.some-class').bind(clickHandler, function() {
+    $('#bio-modal').animate({
+      height: "toggle",
+      opacity: "toggle"
+    });
+  });
 });
