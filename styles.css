@@ -194,3 +194,7 @@ h2 {
     display: block;
   }
 }
+
+.dropshadow:hover {
+  filter: drop-shadow(0px 1px 0.5px #ffffff);
+}
