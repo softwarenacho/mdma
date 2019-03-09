@@ -4,14 +4,8 @@ $(() => {
     video.src = 'https://res.cloudinary.com/nuxuicourt/video/upload/v1552043413/mdma_nzfo4e.mp4';
   }
   video.style.display = 'block';
-  $("#bio-toggle").click( () => {
-    $('#bio-modal').animate({
-      height: "toggle",
-      opacity: "toggle"
-    });
-  });
-  var clickHandler = ('ontouchstart' in document.documentElement ? 'touchstart' : 'click');
-  $('a.some-class').bind(clickHandler, function() {
+  let clickHandler = ('ontouchstart' in document.documentElement ? 'touchstart' : 'click');
+  $('#bio-toggle').bind(clickHandler, function() {
     $('#bio-modal').animate({
       height: "toggle",
       opacity: "toggle"
