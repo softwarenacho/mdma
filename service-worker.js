@@ -1,5 +1,5 @@
 const name = 'mdma';
-const files = ['/index.html', '/styles.css', 'logo/512.png'];
+const files = ['logo', 'fonts'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
