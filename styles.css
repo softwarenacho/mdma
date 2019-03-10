@@ -10,6 +10,7 @@ body {
   margin: 0;
   margin-top: -16px;
   overflow-x: hidden;
+  background-color: black;
 }
 
 a:hover {
@@ -38,10 +39,11 @@ a:hover {
   padding-bottom: 5px;
   cursor: pointer;
   text-decoration: underline;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .content {
-  background-color: black;
   width: 100vw;
   overflow: hidden;
   height: calc(100vh - 135px);
@@ -50,7 +52,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  }
+}
 
 #video, #img  {
   display: none;
@@ -59,14 +61,17 @@ a:hover {
   height: calc(100vh - 135px);
   object-fit: cover;
   object-position: top;
-  z-index: 0;
   overflow: hidden;
+}
+
+#video {
+  z-index: -1 !important;
 }
 
 .content .modal {
   max-width: 75%;
   max-height: 75%;
-  padding: 50px;
+  padding: 25px;
   background-color: rgba(0, 0, 0, 0.65);
   color: white;
   overflow: scroll;
@@ -116,6 +121,8 @@ h1.socials {
 
 h1.socials a {
   margin: 0 10px;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 h2 {
