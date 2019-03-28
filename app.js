@@ -10,4 +10,10 @@ $(() => {
     $('#bio-modal').toggle();
   });
 
+  $( "#suscribe" ).submit( e => {
+    alert( "Handler for .submit() called." );
+    e.preventDefault();
+  });
+
+
 });

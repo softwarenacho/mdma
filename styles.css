@@ -139,6 +139,100 @@ h2 {
   border-left: 2.5px solid #3cb7a6;
 }
 
+.suscribe {
+  padding: 25px;
+  /* margin: 25px; */
+  min-width: 200px;
+  border: 1px solid black;
+  background-color: #ffffffd9;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#suscribe {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.suscribe img {
+  width: calc(100% + 50px);
+  margin: -25px;
+  margin-bottom: 0px;
+}
+
+.suscribe {
+  color: #2b2b2b;
+  filter: drop-shadow(1px 1px 0px black);
+}
+
+.suscribe:hover {
+  border-bottom: 2.5px solid #2b2b2b;
+}
+
+.suscribe .email {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #2b2b2b;
+  outline: none;
+  font-size: 14px;
+}
+
+.suscribe .email:hover {
+  border-bottom: 2.5px solid #2b2b2b;
+}
+
+.suscribe .submit {
+  margin-left: 25px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 2.5px solid #3cb7a6;
+  filter: drop-shadow(1px 1px 0px black);
+}
+
+.suscribe .submit:hover {
+  filter: drop-shadow(2.5px 2.5px 0px black);
+}
+
+.close{
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  background-color: #ff0000d9;
+  color: #ffffffd9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  cursor: pointer;
+}
+
+.close:hover {
+  border-width: 1.5px;
+}
+
+.close:before {
+  content: "×";
+}
+
 @media (max-width: 768px) {
   .header {
     height: 100px;
