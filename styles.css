@@ -165,6 +165,7 @@ h2 {
   left: 50%;
   top: 50%;
   border-radius: 15px;
+  z-index: 2;
   -ms-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -173,7 +174,7 @@ h2 {
   animation-delay: 0.25s;
 }
 
-.suscribe .submit:focus {
+.subscribe .submit:focus {
   outline: none;
 }
 
