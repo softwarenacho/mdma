@@ -11,41 +11,68 @@ $(() => {
   });
 
   $('.close').click( () => {
-    toggle()
+    hide();
   });
 
-  $('.suscribe-btn').click( () => {
-    toggle()
+  $('.subscribe-btn').click( () => {
+    toggle();
   });
 
   $('.info').click( e => {
-    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+    if ( !($(e.target).hasClass('subscribe-btn')) ) {
       hide();
     }
   });
 
   $('.content').click( e => {
-    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+    if ( !($(e.target).hasClass('subscribe-btn')) ) {
       hide();
     }
   });
+
+  if (!localStorage.getItem('subscribed')) {
+    show();
+  }
 
   $('.header').click( e => {
-    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+    if ( !($(e.target).hasClass('subscribe-btn')) ) {
       hide();
     }
   });
 
-  $('#suscribe').submit( e => {
-    e.preventDefault();
+  $('.submit').click( e => {
+    let email = $('.email').val();
+    let url = "https://nacho-api.herokuapp.com/api/mdma/subscribe?email=" + email;
+    $.get(url, (data, status) => {
+      if (data.status == 200) {
+        localStorage.setItem('subscribed', data.id);
+        $('#subscribe').html(`
+          <div class="success">
+            <img src="logo/success.svg" alt="success" />
+            <span>You are now connected with us.</span>
+          </div>
+        `);
+        setTimeout( () => {
+          hide()
+        }, 2500);
+      } else {
+        $('#subscribe').append(`
+          <span style="padding-top: 25px; text-align: center;">We are already connected. See you in the future.</span>
+        `);
+      }
+    });
   });
 
   function toggle() {
-    $('.suscribe').toggle();
+    $('.subscribe').toggle();
   }
 
   function hide() {
-    $('.suscribe').hide();
+    $('.subscribe').hide();
+  }
+
+  function show() {
+    $('.subscribe').show();
   }
 
 
