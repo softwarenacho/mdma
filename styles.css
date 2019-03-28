@@ -173,7 +173,7 @@ h2 {
 
 .suscribe {
   color: #2b2b2b;
-  filter: drop-shadow(1px 1px 0px black);
+  filter: drop-shadow(1px 1px 0px #2b2b2b);
 }
 
 .suscribe:hover {
