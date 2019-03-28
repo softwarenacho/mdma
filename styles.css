@@ -303,6 +303,7 @@ h2 {
   .info .lasts a {
     display: block;
     font-size: 0.75rem;
+    padding-left: 0;
     padding-right: 0;
     margin-bottom: 10px;
   }
