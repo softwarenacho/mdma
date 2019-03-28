@@ -11,13 +11,42 @@ $(() => {
   });
 
   $('.close').click( () => {
-    $('.suscribe').toggle();
+    toggle()
+  });
+
+  $('.suscribe-btn').click( () => {
+    toggle()
+  });
+
+  $('.info').click( e => {
+    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+      hide();
+    }
+  });
+
+  $('.content').click( e => {
+    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+      hide();
+    }
+  });
+
+  $('.header').click( e => {
+    if ( !($(e.target).hasClass('suscribe-btn')) ) {
+      hide();
+    }
   });
 
   $('#suscribe').submit( e => {
-    // $('.suscribe').toggle();
     e.preventDefault();
   });
+
+  function toggle() {
+    $('.suscribe').toggle();
+  }
+
+  function hide() {
+    $('.suscribe').hide();
+  }
 
 
 });
