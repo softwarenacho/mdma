@@ -10,8 +10,12 @@ $(() => {
     $('#bio-modal').toggle();
   });
 
-  $( "#suscribe" ).submit( e => {
-    alert( "Handler for .submit() called." );
+  $('.close').click( () => {
+    $('.suscribe').toggle();
+  });
+
+  $('#suscribe').submit( e => {
+    // $('.suscribe').toggle();
     e.preventDefault();
   });
 
