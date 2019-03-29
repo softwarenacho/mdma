@@ -49,7 +49,7 @@ $(() => {
         $('#subscribe').html(`
           <div class="success">
             <img src="logo/success.svg" alt="success" />
-            <span>You are now connected with us.</span>
+            <span style="text-align: center;">Futurism and Techno Music Live.<br>It's all about that.<br>Let's enjoy it.</span>
           </div>
         `);
         setTimeout( () => {
