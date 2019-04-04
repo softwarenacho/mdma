@@ -55,7 +55,7 @@ a:hover {
 }
 
 #video, #img  {
-  display: none;
+  /* display: none; */
   position: absolute;
   width: 100vw;
   height: calc(100vh - 135px);
