@@ -45,7 +45,7 @@ $(() => {
   });
 
   $('.submit').click( e => {
-    if (localStorage.getItem('busy') == 'false') {
+    if (localStorage.getItem('busy') == 'false' || localStorage.getItem('busy') == null ) {
       localStorage.setItem('busy', 'true');
       $('.submit').hide();
       $('.spin').show();
