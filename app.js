@@ -43,12 +43,9 @@ $(() => {
   $('#email').on('input', () =>{
     $("#email").removeClass('invalid');
   });
-      // $('.spin').show();
 
   $('.submit').click( e => {
-    console.log('click',localStorage.getItem('busy'),localStorage.getItem('busy') == 'false')
     if (localStorage.getItem('busy') == 'false') {
-      console.log('processing',localStorage.getItem('busy'))
       localStorage.setItem('busy', 'true');
       $('.submit').hide();
       $('.spin').show();
