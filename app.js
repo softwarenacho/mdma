@@ -40,34 +40,58 @@ $(() => {
     }
   });
 
-  $('.submit').click( e => {
-    let email = $('.email').val();
-    let url = "https://nacho-api.herokuapp.com/api/mdma/subscribe?email=" + email;
-    $.get(url, (data, status) => {
-      if (data.status == 200) {
-        localStorage.setItem('subscribed', data.id);
-        $('#subscribe').html(`
-          <div class="success">
-            <img src="logo/success.svg" alt="success" />
-            <span style="text-align: center;">Futurism and Techno Music Live.<br>It's all about that.<br>Let's enjoy it.</span>
-          </div>
-        `);
-        setTimeout( () => {
-          hide()
-        }, 3500);
-      } else {
-        $('#subscribe').append(`
-          <span style="padding-top: 25px; text-align: center;">We are already connected. See you in the future.</span>
-        `);
-      }
-    });
+  $('#email').on('input', () =>{
+    $("#email").removeClass('invalid');
   });
+
+  $('.submit').click( e => {
+    let email = $('#email').val();
+    let regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,6})+$/;
+    let url = "https://nacho-api.herokuapp.com/api/mdma/subscribe?email=" + email;
+    if ( email.length && regex.test(email) ) {
+      clean();
+      $.get(url, (data, status) => {
+        if (data.status == 200) {
+          localStorage.setItem('subscribed', data.id);
+          $('.subscribe-form').hide();
+          $('#subscribe').append(`
+            <div class="success flash">
+              <img src="logo/success.svg" alt="success" />
+              <span style="text-align: center;">Futurism and Techno Music Live.<br>It's all about that.<br>Let's enjoy it.</span>
+            </div>
+          `);
+          setTimeout( () => {
+            clean();
+            $('.subscribe-form').show();
+            hide();
+          }, 3500);
+        } else {
+          clean();
+          $('#subscribe').append(`
+            <span class="flash" style="padding-top: 25px; text-align: center;">We are already connected. See you in the future.</span>
+          `);
+        }
+      });
+    } else {
+      clean();
+      $('#email').addClass('invalid');
+      $('#subscribe').append(`
+        <span class="empty flash" style="padding-top: 25px; text-align: center;">We need a valid email to subscribe you.</span>
+      `);
+    }
+  });
+
+  function clean() {
+    $('#email').removeClass('invalid');
+    $('.flash').remove();
+  }
 
   function toggle() {
     $('.subscribe').toggle();
   }
 
   function hide() {
+     clean();
     $('.subscribe').hide();
   }
 

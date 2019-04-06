@@ -17,7 +17,7 @@ a:hover {
   text-decoration: underline !important;
 }
 
-.info{
+.info {
   background-color: black;
   margin-top: -16px;
   color: white;
@@ -32,6 +32,8 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 .header .bio {
@@ -52,6 +54,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 150px;
+  z-index: -1;
+  background-image: url(logo/bg.jpg);
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 100px;
 }
 
 #video, #img  {
@@ -140,8 +150,6 @@ h2 {
 }
 
 #subscribe {
-  /* min-width: 100%; */
-  /* max-width: 350px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -156,7 +164,7 @@ h2 {
   padding: 25px;
   min-width: 200px;
   border: 1px solid #2b2b2b;
-  background-color: #ffffffd9;
+  background-color: #ffffffd9 !important;
   position: fixed;
   display: none;
   flex-direction: column;
@@ -200,6 +208,14 @@ h2 {
   outline: none !important;
 }
 
+.invalid {
+  border-bottom: 2.5px solid red !important;
+}
+
+.empty {
+  color: red;
+}
+
 .subscribe .email:hover {
   border-bottom: 2.5px solid #2b2b2b;
 }
@@ -212,6 +228,7 @@ h2 {
   border-radius: 10px;
   border: 2.5px solid #3cb7a6;
   filter: drop-shadow(1px 1px 0px black);
+  cursor: pointer;
 }
 
 .subscribe .submit:hover {
@@ -240,6 +257,7 @@ h2 {
 }
 
 .subscribe-btn {
+  cursor: pointer;
   padding-right: 25px;
   border-right: 2.5px solid #3cb7a6;
 }
@@ -254,9 +272,9 @@ h2 {
   top: -10px;
   width: 20px;
   height: 20px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   border-radius: 100%;
-  background-color: #ff0000d9;
+  background-color: #ff0000;
   color: #ffffffd9;
   display: flex;
   justify-content: center;
@@ -276,6 +294,10 @@ h2 {
   content: "×";
 }
 
+.flash {
+  animation: fadein 0.25s forwards;
+}
+
 @media (max-width: 768px) {
   .header {
     height: 100px;
@@ -293,8 +315,12 @@ h2 {
   .header .bio {
     font-size: 0.75rem;
   }
+  .content {
+    background-position-y: 50px;
+  }
   .content, #video, #img  {
     height: calc(100vh - 85px);
+    padding-top: 100px;
   }
   .content .modal {
     font-size: 0.85rem;
