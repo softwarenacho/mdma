@@ -54,7 +54,7 @@ $(() => {
         `);
         setTimeout( () => {
           hide()
-        }, 2500);
+        }, 3500);
       } else {
         $('#subscribe').append(`
           <span style="padding-top: 25px; text-align: center;">We are already connected. See you in the future.</span>
