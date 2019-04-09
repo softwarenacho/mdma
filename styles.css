@@ -34,6 +34,7 @@ a:hover {
   align-items: center;
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .header .bio {
@@ -65,7 +66,6 @@ a:hover {
 }
 
 #video, #img  {
-  /* display: none; */
   position: absolute;
   width: 100vw;
   height: calc(100vh - 135px);
@@ -78,7 +78,7 @@ a:hover {
   z-index: -1 !important;
 }
 
-.content .modal {
+.info .modal {
   max-width: 75%;
   max-height: 75%;
   padding: 25px;
@@ -90,6 +90,14 @@ a:hover {
   font-size: 1.25rem;
   flex-direction: column;
   border-radius: 15px;
+  position: absolute;
+  top: 175px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 270px);
 }
 
 .lasts a {
@@ -290,7 +298,6 @@ h2 {
   top: -10px;
   width: 20px;
   height: 20px;
-  /* border: 1px solid #000; */
   border-radius: 100%;
   background-color: #ff0000;
   color: #ffffffd9;
@@ -340,8 +347,10 @@ h2 {
     height: calc(100vh - 85px);
     padding-top: 100px;
   }
-  .content .modal {
+  .info .modal {
     font-size: 0.85rem;
+    height: calc(100vh - 215px);
+    top: 125px;
   }
   .info h1 {
     width: calc(100% - 32px);
